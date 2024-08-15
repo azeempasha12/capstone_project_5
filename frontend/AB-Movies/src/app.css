@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.effective-background {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #3498db, #e74c3c, #2ecc71, #f39c12);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+.form-container15 {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    width: 350px;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+
+}
+
+.form2 label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form2 input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.form2 input:focus {
+    outline: none;
+    background-color: #444;
+}
+
+.form2 button {
+    background-color: #ff5733;
+    color: #fff;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.form2 button:hover {
+    background-color: #e64a2e;
+}
+
+
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #000000;
+}
+
+
+
+/* Trending */
+/* App.css */
+@keyframes move {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+  }
+  
+  .animate-slider {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  
+  .animate-move {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 200%; /* Ensure enough space for the bidirectional effect */
+    animation: move 20s linear infinite;
+  }
+  
+
+  
