@@ -25,7 +25,6 @@ const DetailsPage = () => {
         const data = await res.json();
         setDetails(data);
 
-        // Fetch the trailer for the movie or TV show
         const videoUrl = type === "movie"
           ? `https://api.themoviedb.org/3/movie/${id}/videos?api_key=aeb02d1e65827485ce7c24b5af2cd80c`
           : `https://api.themoviedb.org/3/tv/${id}/videos?api_key=aeb02d1e65827485ce7c24b5af2cd80c`;
@@ -56,7 +55,7 @@ const DetailsPage = () => {
   }
 
   return (
-    <div className="lg:ml-32">
+    <div className="lg:ml-28 lg:mr-2 md:ml-28 md:mr-2 sm:mx-2 sm:mt-12 mt-16">
       <h1 className="text-3xl font-bold mb-4 ml-2 sm:ml-4">{type === "movie" ? details.title : details.name}</h1>
       <div className="flex">
         <img
@@ -74,22 +73,24 @@ const DetailsPage = () => {
           <p><strong className="p-1">Runtime:</strong>{details.runtime || "N/A"}</p>
           <p><strong className="p-1">Status:</strong>{details.status || "N/A"}</p>
           <p><strong className="p-1">Tagline:</strong>{details.tagline || "N/A"}</p>
-          {/* Add more movie details as needed */}
         </div>
       </div>
       <div className="mt-4">
         {trailerKey ? (
           <div>
             <h2 className="text-xl font-bold mb-2">Watch Trailer</h2>
+            <div className="relative" style={{ paddingBottom: "56.25%", height: 0, margin: "0 8px" }}>
             <iframe
-              width="560"
-              height="315"
-              src={`https://www.youtube.com/embed/${trailerKey}`}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+  src={`https://www.youtube.com/embed/${trailerKey}`}
+  title="YouTube video player"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="absolute top-0 left-0 w-full h-full lg:w-1/2 lg:h-1/2"
+></iframe>
+
+
+            </div>
           </div>
         ) : (
           <p>No trailer available</p>
