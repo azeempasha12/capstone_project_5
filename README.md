@@ -22,7 +22,7 @@ The Entertainment App is a full-stack application designed to provide users with
   
 2 **Install Dependencies:** Install the necessary dependencies using npm.
  ```sh
-npm install(provide copy logo)
+npm install
  ```
 
 3 **Configure Environment Variables:** Create a .env file based on the provided .env.example file. Provide your MongoDB URI and TMDB API key in the .env file.
@@ -35,7 +35,7 @@ FRONTEND_URL="Frontend url"
 
 4 **Start the Server:** Run the backend server.
  ```sh
-node index.js(provide copy logo)
+node index.js
  ```
 
 ### Backned Technologies
@@ -88,7 +88,7 @@ npm run dev(provide copy logo)
 *Context API
 
 *Frontend Project Structure*
-pre>
+<pre>
 src
 ├── assets
 ├── components
@@ -104,18 +104,19 @@ src
 │   ├── Movies.jsx
 │   ├── signup.jsx
 │   └── tvSeries.jsx
-├── App.jsx 
-├── main.jsx 
+├── App.jsx
+├── main.jsx
 ├── .eslintrc.cjs
 ├── .gitignore
-├── index.css 
+├── index.css
 ├── index.html
 ├── package.json
 ├── package-lock.json
 ├── postcss.config.js
 ├── tailwind.config.js
 └── vite.config.js
-pre>
+</pre>
+
 
 
 ## Team member
