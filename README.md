@@ -1,5 +1,5 @@
 *Entertaiment App*
-Entertainment App
+The Entertainment App is a full-stack application designed to provide users with access to a vast collection of movies and TV shows, leveraging the TMDB API for fetching media details. It features user authentication, media exploration, and personal bookmarks, offering a comprehensive and personalized media browsing experience.
 
 
 #Deployment#
@@ -38,11 +38,11 @@ node index.js(provide copy logo)
 * cors
 
   *Backend Project Structure*
-  |--backend
-       |--Node_module
-       |--package-lock.json
-       |--package.json
-       |--server.js
+backend
+├── node_modules
+├── package-lock.json
+├── package.json
+└── server.js
 
 
 
@@ -71,37 +71,33 @@ npm run dev(provide copy logo)
 *Context API
 
 *Frontend Project Structure*
-|--src
-    |--assets
-    |-- Components
-    |       |--navbar.js
-    |       |-- authContext.js
-
-    |-- pages
-         |--HomePagex
-              |--Trending.jsx
-              |--Recommendation.jsx
-              
-         |--BookmarkPage.jsx
-         |--login.jsx
-         |--movieDetails.jsx
-         |--Movies.jsx
-         |--signup.jsx
-         |--tvSeries.jsx
-         
-  |--  App.jsx 
-  |-- main.jsx 
-  |-- .eslintrc.cjs
-  |--.gitignore
-  |-- index.css 
-  |-- index.html
-  |-- package.json
-  |-- package-lock.json
-  |-- postcss.config.js
-  |-- tailwind.cofig.js
-  |-- vite.config.js    
+src
+├── assets
+├── components
+│   ├── navbar.js
+│   └── authContext.js
+├── pages
+│   ├── HomePage
+│   │   ├── Trending.jsx
+│   │   └── Recommendation.jsx
+│   ├── BookmarkPage.jsx
+│   ├── login.jsx
+│   ├── movieDetails.jsx
+│   ├── Movies.jsx
+│   ├── signup.jsx
+│   └── tvSeries.jsx
+├── App.jsx 
+├── main.jsx 
+├── .eslintrc.cjs
+├── .gitignore
+├── index.css 
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── tailwind.config.js
+└── vite.config.js
 
 
-
-  *Team member*
+*Team member*
   Azeem pasha (Individual)
