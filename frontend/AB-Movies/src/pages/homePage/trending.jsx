@@ -28,7 +28,7 @@ const  Trending = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [url]);
 
   return (
     <div>

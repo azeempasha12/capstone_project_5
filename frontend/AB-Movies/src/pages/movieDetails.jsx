@@ -55,24 +55,24 @@ const DetailsPage = () => {
   }
 
   return (
-    <div className="lg:ml-28 lg:mr-2 md:ml-28 md:mr-2 sm:mx-2 sm:mt-12 mt-16">
+    <div className="lg:ml-28 lg:mr-2 md:ml-28 md:mr-2 sm:mx-2 sm:mt-12 mt-16 m-2">
       <h1 className="text-3xl font-bold mb-4 ml-2 sm:ml-4">{type === "movie" ? details.title : details.name}</h1>
-      <div className="flex">
+      <div className="flex flex-col sm:flex-row">
         <img
           src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
           alt={type === "movie" ? details.title : details.name}
-          className="w-1/3 ml-2 sm:ml-4"
+          className="w-full sm:w-1/3 mx-auto sm:ml-4 sm:mx-0 mb-4 sm:mb-0"
         />
-        <div className="ml-4">
+        <div className="ml-2">
           <p><strong className="p-1">Genre:</strong> {details.genres ? details.genres.map(genre => genre.name).join(', ') : 'N/A'}</p>
           <p><strong className="p-1">Release Date:</strong> {type === "movie" ? details.release_date : details.first_air_date}</p>
           <p><strong className="p-1">Overview:</strong> {details.overview || "N/A"}</p>
-          <p><strong className="p-1">Origin country:</strong>{details.origin_country || "N/A"}</p>
-          <p><strong className="p-1">Budget:</strong>{details.budget || "N/A"}</p>
-          <p><strong className="p-1">Popularity:</strong>{details.popularity || "N/A"}</p>
-          <p><strong className="p-1">Runtime:</strong>{details.runtime || "N/A"}</p>
-          <p><strong className="p-1">Status:</strong>{details.status || "N/A"}</p>
-          <p><strong className="p-1">Tagline:</strong>{details.tagline || "N/A"}</p>
+          <p><strong className="p-1">Origin country:</strong> {details.origin_country || "N/A"}</p>
+          <p><strong className="p-1">Budget:</strong> {details.budget || "N/A"}</p>
+          <p><strong className="p-1">Popularity:</strong> {details.popularity || "N/A"}</p>
+          <p><strong className="p-1">Runtime:</strong> {details.runtime || "N/A"}</p>
+          <p><strong className="p-1">Status:</strong> {details.status || "N/A"}</p>
+          <p><strong className="p-1">Tagline:</strong> {details.tagline || "N/A"}</p>
         </div>
       </div>
       <div className="mt-4">
@@ -80,16 +80,14 @@ const DetailsPage = () => {
           <div>
             <h2 className="text-xl font-bold mb-2">Watch Trailer</h2>
             <div className="relative" style={{ paddingBottom: "56.25%", height: 0, margin: "0 8px" }}>
-            <iframe
-  src={`https://www.youtube.com/embed/${trailerKey}`}
-  title="YouTube video player"
-  frameBorder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-  className="absolute top-0 left-0 w-full h-full lg:w-1/2 lg:h-1/2"
-></iframe>
-
-
+              <iframe
+                src={`https://www.youtube.com/embed/${trailerKey}`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute top-0 left-0 w-full h-full lg:w-1/2 lg:h-1/2"
+              ></iframe>
             </div>
           </div>
         ) : (

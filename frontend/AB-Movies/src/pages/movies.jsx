@@ -8,8 +8,7 @@ const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [filteredMovies, setFilteredMovies] = useState([]);
   const [searchString, setSearchString] = useState("");
-  const { isLoggedIn } = useAuth()
-
+  const { isLoggedIn } = useAuth();
   const navigate = useNavigate();
 
   const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
@@ -17,7 +16,7 @@ const MoviesPage = () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZWIwMmQxZTY1ODI3NDg1Y2U3YzI0YjVhZjJjZDgwYyIsIm5iZiI6MTcyMjY4NDgwOS42OTY3MTgsInN1YiI6IjY2YWUxMjMzMzIzOTViOWM3OGEzNDExYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wdZWO9JafogqoUcwx_wGD3YyW1CDN6-S4NrXTioafP8'
+      Authorization: 'Bearer YOUR_API_KEY_HERE' // Replace with your actual API key
     }
   };
 
@@ -49,8 +48,6 @@ const MoviesPage = () => {
   const handleBookmarkClick = (movie) => {
     if (isLoggedIn) {
       const existingBookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
-      
-     
       const isAlreadyBookmarked = existingBookmarks.some(bookmarkedMovie => bookmarkedMovie.id === movie.id);
       
       if (isAlreadyBookmarked) {
@@ -58,6 +55,7 @@ const MoviesPage = () => {
       } else {
         const updatedBookmarks = [...existingBookmarks, movie];
         localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks));
+        console.log("Added to bookmarks:", movie); // Debug log
         navigate('/BookMarkPage');
       }
     } else {
@@ -69,7 +67,6 @@ const MoviesPage = () => {
     <div className="lg:ml-28 lg:mr-2 md:ml-28 md:mr-2 sm:mx-2 sm:mt-12 mt-16">
       <h1 className="text-3xl font-bold mb-4">Movies</h1>
       <div className="mb-4 mt-6 sm:mt-6 relative">  
-
         <input
           type="text"
           placeholder="Search for movies and TV Shows..."

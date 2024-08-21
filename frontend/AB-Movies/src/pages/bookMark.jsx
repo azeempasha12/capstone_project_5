@@ -2,20 +2,26 @@ import { useEffect, useState } from "react";
 import { FaBookmark, FaTrash } from "react-icons/fa";
 
 const BookMarkPage = () => {
-  const [bookmarkedTVShows, setBookmarkedTVShows] = useState([]);
+  const [bookmarkedMovies, setBookmarkedMovies] = useState([]);
 
   useEffect(() => {
     const fetchBookmarks = () => {
-      const savedBookmarks = JSON.parse(localStorage.getItem('bookmarkedTVShows')) || [];
-      setBookmarkedTVShows(savedBookmarks);
+      try {
+        const savedBookmarks = JSON.parse(localStorage.getItem('bookmarkedMovies')) || [];
+        console.log("Fetched bookmarks:", savedBookmarks); // Debug log
+        setBookmarkedMovies(savedBookmarks);
+      } catch (error) {
+        console.error("Error fetching bookmarks from localStorage:", error);
+      }
     };
     fetchBookmarks();
   }, []);
 
   const handleRemoveBookmark = (id) => {
-    const updatedBookmarks = bookmarkedTVShows.filter(show => show.id !== id);
-    localStorage.setItem('bookmarkedTVShows', JSON.stringify(updatedBookmarks));
-    setBookmarkedTVShows(updatedBookmarks);
+    const updatedBookmarks = bookmarkedMovies.filter(movie => movie.id !== id);
+    localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks));
+    console.log("Removed bookmark with id:", id); // Debug log
+    setBookmarkedMovies(updatedBookmarks);
   };
 
   return (
@@ -24,31 +30,37 @@ const BookMarkPage = () => {
         Bookmarked
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-        {bookmarkedTVShows.map(show => (
-          <div 
-            key={show.id} 
-            className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col relative"
-          >
-            {show.poster_path && (
-              <img 
-                src={`https://image.tmdb.org/t/p/w500${show.poster_path}`} 
-                alt={show.name || show.original_name} 
-                className="w-full h-auto object-cover"
-              />
-            )}
-            <div className="absolute top-2 left-2">
-              <button 
-                className="bg-white p-2 rounded-full shadow-md hover:bg-gray-200" 
-                onClick={() => handleRemoveBookmark(show.id)}
-              >
-                <FaTrash className="h-4 w-4 text-red-600" />
-              </button>
+        {bookmarkedMovies.length > 0 ? (
+          bookmarkedMovies.map(movie => (
+            <div 
+              key={movie.id} 
+              className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col relative"
+            >
+              {movie.poster_path && (
+                <img 
+                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                  alt={movie.title || movie.original_name} 
+                  className="w-full h-auto object-cover"
+                />
+              )}
+              <div className="absolute top-2 right-2">
+                <button 
+                  className="bg-white p-2 rounded-full shadow-md hover:bg-gray-200" 
+                  onClick={() => handleRemoveBookmark(movie.id)}
+                >
+                  <FaTrash className="h-4 w-4 text-red-600" />
+                </button>
+              </div>
+              <div className="p-2 flex-grow">
+                <h2 className="text-lg font-semibold">{movie.title || movie.original_name}</h2>
+              </div>
             </div>
-            <div className="p-2 flex-grow">
-              <h2 className="text-lg font-semibold">{show.name || show.original_name}</h2>
-            </div>
+          ))
+        ) : (
+          <div className="text-center mt-10">
+            <h2 className="text-xl font-bold">No bookmarks found</h2>
           </div>
-        ))}
+        )}
       </div>
     </div>
   );

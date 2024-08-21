@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useEffect, useState } from "react";
 import { FaPlay, FaBookmark } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -15,23 +15,24 @@ const Recommended = () => {
         }
     };
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch(url, options);
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const data = await res.json();
-                console.log("data", data);
-                setRecommendations(data.results); 
-            } catch (error) {
-                console.error('Fetch error:', error);
+useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const res = await fetch(url, options);
+            if (!res.ok) {
+                throw new Error('Network response was not ok');
             }
-        };
+            const data = await res.json();
+            console.log("data", data);
+            setRecommendations(data.results); 
+        } catch (error) {
+            console.error('Fetch error:', error);
+        }
+    };
 
-        fetchData();
-    }, [url]);
+    fetchData();
+}, [url]);
+
 
 
     return (
