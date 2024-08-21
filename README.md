@@ -16,11 +16,12 @@ The Entertainment App is a full-stack application designed to provide users with
 ## Getting Started For Backend
 ### Backend setup
 1 **Navigate to the Backend Directory:** Move into the backend directory of the project.
+
  ```sh
-     cd entertainment-full stack project/backend
-    ```
-  
-2 **Install Dependencies:** Install the necessary dependencies using npm.
+  cd entertainment-full stack project/backend
+   ```
+
+ 2. **Install Dependencies:** Install the necessary dependencies using npm.
  ```sh
 npm install
  ```
