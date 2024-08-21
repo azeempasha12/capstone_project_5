@@ -51,7 +51,7 @@ const SignUp = () => {
         <div className="flex flex-col items-center mb-6">
           <img
             src="public/assets/film_icon.jpg"
-            alt="Logo"
+            alt="logo"
             className="h-16 w-16 object-contain mb-4"
           />
           <h1 className="text-2xl font-bold text-gray-800">Create an Account</h1>
