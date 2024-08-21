@@ -44,7 +44,7 @@ export const Navbar = () => {
           <img
             src="/assets/images.jpeg"
             alt="User Profile"
-            className="h-7 w-7 rounded-full object-cover"
+            className="h-8 w-10 rounded-full object-cover"
             onClick={() => navigate('/profile')}
           />
         ) : (
