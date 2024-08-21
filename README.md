@@ -63,30 +63,30 @@ backend
    ### frontend setup
 1 **Navigate to the Frontend Directory:** Move into the frontend directory of the project.
  ```sh
-cd entertainment-full stack project/frontend/AB-Movies(provide copy logo)
+cd entertainment-full stack project/frontend/AB-Movies
  ```
 
 2 **Install Dependencies:** Install the necessary dependencies using npm.
  ```sh
-npm install(provide copy logo)
+npm install
  ```
 
 3 **Start the Application:** Run the frontend application.
  ```sh
-npm run dev(provide copy logo)
+npm run dev
  ```
 
 
 
 ### frontend technologies
-*Vite
-*Npm
-*HTML
-*CSS
-*Tailwind CSS
-*React.js
-*Javascript
-*Context API
+- Vite
+- Npm
+- HTML
+- CSS
+- Tailwind CSS
+- React.js
+- Javascript
+- Context API
 
 *Frontend Project Structure*
 <pre>
