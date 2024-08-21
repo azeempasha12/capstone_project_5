@@ -16,7 +16,7 @@ const MoviesPage = () => {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer YOUR_API_KEY_HERE' // Replace with your actual API key
+      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhZWIwMmQxZTY1ODI3NDg1Y2U3YzI0YjVhZjJjZDgwYyIsIm5iZiI6MTcyMjY4NDgwOS42OTY3MTgsInN1YiI6IjY2YWUxMjMzMzIzOTViOWM3OGEzNDExYSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.wdZWO9JafogqoUcwx_wGD3YyW1CDN6-S4NrXTioafP8'
     }
   };
 
@@ -55,7 +55,7 @@ const MoviesPage = () => {
       } else {
         const updatedBookmarks = [...existingBookmarks, movie];
         localStorage.setItem('bookmarkedMovies', JSON.stringify(updatedBookmarks));
-        console.log("Added to bookmarks:", movie); // Debug log
+        console.log("Added to bookmarks:", movie);
         navigate('/BookMarkPage');
       }
     } else {
