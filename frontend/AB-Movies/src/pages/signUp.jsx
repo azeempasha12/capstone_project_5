@@ -11,13 +11,24 @@ const SignUp = () => {
 
   const handleSignUp = async (e) => {
     e.preventDefault();
+  
+    // Custom validation logic
+    if (!email.includes('@')) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    if (password.length < 6) {
+      alert('Password must be at least 6 characters long.');
+      return;
+    }
     if (password !== repeatPassword) {
       alert('Passwords do not match!');
       return;
     }
+  
     setLoading(true); 
     try {
-      const response = await fetch('https://capstone-project-5-3.onrender.com/user', {
+      const response = await fetch('http://localhost:3000/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,7 +36,7 @@ const SignUp = () => {
         body: JSON.stringify({ email, password }),
       });
       const data = await response.json();
-
+  
       if (response.ok) {
         setShowPopup({ type: 'success', message: 'Account created successfully' });
       } else if (response.status === 409) {
@@ -37,9 +48,10 @@ const SignUp = () => {
       console.error('Error:', error);
       setShowPopup({ type: 'error', message: 'An error occurred. Please try again later.' });
     } finally {
-      setLoading(false); // Stop loading
+      setLoading(false); 
     }
   };
+  
 
   const handleLoginRedirect = () => {
     navigate('/login');
