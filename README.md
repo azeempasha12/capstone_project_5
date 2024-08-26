@@ -14,6 +14,8 @@ The Entertainment App is a full-stack application designed to provide users with
 
 
 ## Getting Started For Backend
+AB-Movies-Backend is a comprehensive backend service designed to support a front-end application for browsing, managing, and tracking movies and TV shows. It includes functionalities for user authentication, managing watchlists, and accessing detailed information about various entertainment media.
+
 ### Backend setup
 1 **Navigate to the Backend Directory:** Move into the backend directory of the project.
 
@@ -79,6 +81,7 @@ backend
 
 
   ## GETTING STARTED FOR FRONTEND
+Welcome to AB-Movies-Frontend, the front-end of the Movies and TV Series application, meticulously crafted by Azeem Pasha. This React-based project offers users an immersive experience to explore a wide range of multimedia content, including movies and TV shows. The application leverages Tailwind CSS for styling, useState and useEffect for state management, and fetch for API requests, resulting in a responsive and user-friendly web experience.
 
    ### frontend setup
 1 **Navigate to the Frontend Directory:** Move into the frontend directory of the project.
