@@ -3,7 +3,7 @@ The Entertainment App is a full-stack application designed to provide users with
 
 
 ## Deployment#
-- **Frontend** :-https://66c5c40a796ef10c9ff20c8b--endearing-valkyrie-d13d88.netlify.app/
+- **Frontend** :-https://66cc44c32f99f1c22f90fed2--papaya-phoenix-02b280.netlify.app/
 - **backend** :-https://capstone-project-5-3.onrender.com
 
 ## features
@@ -45,15 +45,35 @@ node index.js
 - MongoDB
 -  dotenv
 -  cors
+-  mongoose
+-  jsonwebtoken
+  
 
   ### Backend Project Structure
   
 backend
 <pre>
-├── node_modules
-├── package-lock.json
-├── package.json
-└── server.js
+/backend
+│              
+│
+├── /controllers
+│   ├── userController.js # Handles user authentication logic (login, signup)
+│
+├── /models
+│   ├── user.js      # Defines the User schema
+│   ├── movie.js     # Defines the Movie/TV Show schema
+│   └── Tvseries.js
+│
+├── /routes
+│   ├── userRoutes.js
+│  
+│
+├── .env
+ ├── app.js
+├── server.js             # Main server file (entry point)
+├── package.json          # Dependencies and scripts
+└── README.md             # Project documentation
+
 </pre>
 
 
