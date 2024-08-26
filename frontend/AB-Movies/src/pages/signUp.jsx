@@ -28,7 +28,7 @@ const SignUp = () => {
   
     setLoading(true); 
     try {
-      const response = await fetch('http://localhost:3000/user', {
+      const response = await fetch('https://capstone-project-5-3.onrender.com/user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

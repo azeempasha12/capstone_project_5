@@ -25,6 +25,7 @@ const MoviesPage = () => {
       try {
         const res = await fetch(url, options);
         const data = await res.json();
+        console.log("movies data", data)
         setMovies(data.results);
         setFilteredMovies(data.results);
       } catch (err) {
