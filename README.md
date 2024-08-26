@@ -36,7 +36,7 @@ FRONTEND_URL="Frontend url"
 
 4 **Start the Server:** Run the backend server.
  ```sh
-node index.js
+node server.js
  ```
 
 ### Backned Technologies
